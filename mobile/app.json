@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "iPhone Collection",
+    "slug": "apple-04-mobile",
+    "version": "1.0.0",
+    "orientation": "default",
+    "userInterfaceStyle": "light",
+    "ios": { "supportsTablet": true },
+    "android": { "package": "com.apple04.collection" },
+    "web": { "bundler": "metro" }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "apple-04",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "web"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace web",
+    "build": "npm run build --workspace web",
+    "preview": "npm run preview --workspace web",
+    "setup:mobile": "npm install --prefix mobile",
+    "mobile": "npm start --prefix mobile",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

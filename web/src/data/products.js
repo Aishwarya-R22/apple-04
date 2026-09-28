@@ -1,0 +1,92 @@
+export const products = [
+  {
+    id: "pro",
+    name: "iPhone 14 Pro",
+    tagline: "The ultimate iPhone.",
+    price: 999,
+    image: 2167,
+    swatches: 2168,
+    new: true,
+    colors: ["Deep Purple", "Gold", "Silver", "Space Black"],
+    hex: ["#61576b", "#eee5d1", "#f1f2ed", "#343434"],
+    display: "6.7″ or 6.1″",
+    screen: "Super Retina XDR display",
+    camera: "Pro camera system",
+    lens: "48MP Main | Ultra Wide | Telephoto",
+    battery: 29,
+    chip: "A16 Bionic chip",
+    features: [2185, 2190, 2197, 2208, 2211, 2215, 2218, 2221],
+  },
+  {
+    id: "14",
+    name: "iPhone 14",
+    tagline: "A total powerhouse.",
+    price: 799,
+    image: 2225,
+    swatches: 2226,
+    new: true,
+    colors: [
+      "Blue",
+      "Purple",
+      "Yellow",
+      "Midnight",
+      "Starlight",
+      "(PRODUCT)RED",
+    ],
+    hex: ["#a5bdcf", "#e9ddec", "#f8e780", "#303740", "#f4f0e8", "#ec3344"],
+    display: "6.7″ or 6.1″",
+    screen: "Super Retina XDR display",
+    camera: "Advanced dual-camera system",
+    lens: "12MP Main | Ultra Wide",
+    battery: 26,
+    chip: "A15 Bionic chip with 5-core GPU",
+    features: [null, 2245, 2252, 2263, 2266, 2270, 2274, 2277],
+  },
+  {
+    id: "13",
+    name: "iPhone 13",
+    tagline: "As amazing as ever.",
+    price: 599,
+    image: 2281,
+    swatches: 2282,
+    colors: ["Green", "Pink", "Blue", "Midnight", "Starlight", "(PRODUCT)RED"],
+    hex: ["#3b5146", "#f2dfdc", "#6c9ab6", "#333b42", "#f4f1e8", "#c91828"],
+    display: "6.1″ or 5.4″",
+    screen: "Super Retina XDR display",
+    camera: "Dual-camera system",
+    lens: "12MP Main | Ultra Wide",
+    battery: 19,
+    chip: "A15 Bionic chip with 4-core GPU",
+    features: [null, 2300, 2305, null, 2318, 2322, 2326, 2329],
+  },
+  {
+    id: "se",
+    name: "iPhone SE",
+    tagline: "Serious power. Serious value.",
+    price: 429,
+    image: 2333,
+    swatches: 2334,
+    colors: ["Midnight", "Starlight", "(PRODUCT)RED"],
+    hex: ["#303740", "#f2f0eb", "#cb283d"],
+    display: "4.7″",
+    screen: "Retina HD display",
+    camera: "Advanced camera system",
+    lens: "12MP Main",
+    battery: 15,
+    chip: "A15 Bionic chip with 4-core GPU",
+    features: [null, 2351, 2356, null, 2366, 2370, 2374, 2377],
+  },
+];
+export const storageOptions = (p) =>
+  p.id === "se" ? [64, 128, 256] : [128, 256, 512];
+export const priceFor = (product, storage) =>
+  product.price +
+  ((product.id === "se"
+    ? { 64: 0, 128: 50, 256: 150 }
+    : { 128: 0, 256: 100, 512: 300 })[storage] ?? 0);
+export const money = (value) =>
+  new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(value);
